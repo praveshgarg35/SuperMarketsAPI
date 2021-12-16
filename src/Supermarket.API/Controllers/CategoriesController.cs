@@ -73,9 +73,7 @@ namespace Supermarket.API.Controllers
             var result = await _categoryService.UpdateAsync(id, category);
 
             if (!result.Success)
-            {
                 return BadRequest(new ErrorResource(result.Message));
-            }
 
             var categoryResource = _mapper.Map<Category, CategoryResource>(result.Resource);
             return Ok(categoryResource);
@@ -94,9 +92,7 @@ namespace Supermarket.API.Controllers
             var result = await _categoryService.DeleteAsync(id);
 
             if (!result.Success)
-            {
                 return BadRequest(new ErrorResource(result.Message));
-            }
 
             var categoryResource = _mapper.Map<Category, CategoryResource>(result.Resource);
             return Ok(categoryResource);
