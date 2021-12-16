@@ -52,9 +52,7 @@ namespace Supermarket.API.Controllers
             var result = await _productService.SaveAsync(product);
 
             if (!result.Success)
-            {
                 return BadRequest(new ErrorResource(result.Message));
-            }
 
             var productResource = _mapper.Map<Product, ProductResource>(result.Resource);
             return Ok(productResource);
@@ -75,9 +73,7 @@ namespace Supermarket.API.Controllers
             var result = await _productService.UpdateAsync(id, product);
 
             if (!result.Success)
-            {
                 return BadRequest(new ErrorResource(result.Message));
-            }
 
             var productResource = _mapper.Map<Product, ProductResource>(result.Resource);
             return Ok(productResource);
