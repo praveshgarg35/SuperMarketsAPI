@@ -50,9 +50,7 @@ namespace Supermarket.API.Controllers
             var result = await _categoryService.SaveAsync(category);
 
             if (!result.Success)
-            {
                 return BadRequest(new ErrorResource(result.Message));
-            }
 
             var categoryResource = _mapper.Map<Category, CategoryResource>(result.Resource);
             return Ok(categoryResource);
