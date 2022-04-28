@@ -99,5 +99,10 @@ namespace Supermarket.API.Controllers
             var categoryResource = _mapper.Map<Product, ProductResource>(result.Resource);
             return Ok(categoryResource);
         }
+
+        public void TestFunction()
+        {
+
+        }
     }
 }
